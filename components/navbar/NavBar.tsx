@@ -1,9 +1,19 @@
 import React from 'react'
+import NavSearch from './NavSearch'
+import LinksDropdown from './LinksDropdown'
+import DarkMode from './DarkMode'
+import Logo from './Logo'
 
-const NavBar = () => {
+const Navbar = () => {
     return (
-        <div>NavBar</div>
+        <>
+            <div>Navbar</div>
+            <NavSearch></NavSearch>
+            <LinksDropdown></LinksDropdown>
+            <DarkMode></DarkMode>
+            <Logo></Logo>
+        </>
     )
 }
 
-export default NavBar
+export default Navbar

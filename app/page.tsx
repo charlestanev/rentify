@@ -1,3 +1,4 @@
+import Navbar from '@/components/navbar/Navbar'
 import { Button } from '@/components/ui/button'
 import React from 'react'
 
@@ -10,6 +11,8 @@ const HomePage = () => {
         size={'lg'}
         className='bg-red-400 capitalize'
       >Click me</Button>
+
+      <Navbar></Navbar>
 
     </>
   )
