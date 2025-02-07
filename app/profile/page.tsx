@@ -1,8 +1,12 @@
 import React from 'react'
+import { Button } from "@/components/ui/button"
 
 const ProfilePage = () => {
     return (
-        <div>ProfilePage</div>
+        <>
+            ProfilePage
+            <Button>Click me</Button>
+        </>
     )
 }
 
