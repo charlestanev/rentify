@@ -13,7 +13,15 @@ import { links } from '@/utils/links';
 import SignOutLink from './SignOutLink';
 
 function LinksDropdown() {
-    return <div>LinksDropdown</div>;
+    return <DropdownMenu>
+        <DropdownMenuTrigger
+            asChild
+            className='flex gap-4 max-w-[100px]'
+        >
+
+        </DropdownMenuTrigger>
+        <DropdownMenuContent></DropdownMenuContent>
+    </DropdownMenu>;
 }
 
 export default LinksDropdown;

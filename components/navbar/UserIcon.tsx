@@ -3,9 +3,7 @@ import React from 'react'
 
 const UserIcon = () => {
     return (
-        <>
-            <LuUser className='w-6 h-6 bg-primary rounded-full text-white' />
-        </>
+        <LuUser className='w-6 h-6 bg-primary rounded-full text-white' />
     )
 }
 
