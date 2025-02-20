@@ -16,17 +16,27 @@ function LinksDropdown() {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button variant='outline' className='flex gap-4 max-w-[100px] bg-red-600'>
+                <Button variant='outline' className='flex gap-4 max-w-[100px] bg-rose-600'>
                     <LuAlignLeft className='w-6 h-6' />
                     <UserIcon />
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent
-                className='w-52'
+                className='w-40'
                 align='start'
-                sideOffset={10}
+                sideOffset={5}
             >
-                
+                {links.map((link, i) => {
+                    return <DropdownMenuItem key={i}>
+                        <Link
+                            href={link.href}
+                            className='capitalize w-full hover:bg-gray-200 dark:hover:bg-rose-600 px-3 py-2 hover:rounded-sm'
+                        >
+                            {link.label}
+                        </Link>
+                    </DropdownMenuItem>
+                })}
+                <DropdownMenuSeparator />
             </DropdownMenuContent>
         </DropdownMenu>
     )
