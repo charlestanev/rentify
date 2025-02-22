@@ -6,7 +6,7 @@ import { FiHome } from 'react-icons/fi'
 const Logo = () => {
     return (
         <div>
-            <Button size='icon' asChild>
+            <Button asChild>
                 <Link href='/'>
                     <FiHome className='w-6 h-6' />
                 </Link>

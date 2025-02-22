@@ -32,7 +32,6 @@ export default function ModeToggle() {
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
                 <Button
-                    variant="outline"
                     size="icon"
                     onClick={() => setTheme(theme === "dark" || theme === "system" ? "light" : "dark")}
                 >
