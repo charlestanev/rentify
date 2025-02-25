@@ -11,6 +11,7 @@ import { Button } from '../ui/button';
 import UserIcon from './UserIcon';
 import { links } from '@/utils/links';
 import SignOutLink from './SignOutLink';
+import { SignedIn, SignedOut, SignInButton, SignUpButton } from '@clerk/nextjs';
 
 function LinksDropdown() {
     return (
@@ -26,16 +27,39 @@ function LinksDropdown() {
                 align='start'
                 sideOffset={5}
             >
-                {links.map((link, i) => {
-                    return <DropdownMenuItem key={i}>
-                        <Link
-                            href={link.href}
-                            className='capitalize w-full hover:bg-gray-200 dark:hover:bg-rose-600 px-3 py-2 hover:rounded-sm'
-                        >
-                            {link.label}
-                        </Link>
+                <SignedOut>
+                    <DropdownMenuItem>
+                        <SignInButton mode='modal'>
+                            <button className='w-full text-left'>Login</button>
+                        </SignInButton>
                     </DropdownMenuItem>
-                })}
+                    <DropdownMenuSeparator />
+
+                    <DropdownMenuItem>
+                        <SignUpButton mode='modal'>
+                            <button className='w-full text-left'>Register</button>
+                        </SignUpButton>
+                    </DropdownMenuItem>
+
+                </SignedOut>
+                <SignedIn>
+                    {links.map((link, i) => {
+                        return <DropdownMenuItem key={i}>
+                            <Link
+                                href={link.href}
+                                className='capitalize w-full hover:bg-gray-200 dark:hover:bg-rose-600 px-3 py-2 hover:rounded-sm'
+                            >
+                                {link.label}
+                            </Link>
+                        </DropdownMenuItem>
+
+                    })}
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>
+                        <SignOutLink />
+                    </DropdownMenuItem>
+                </SignedIn>
+
                 <DropdownMenuSeparator />
             </DropdownMenuContent>
         </DropdownMenu>
